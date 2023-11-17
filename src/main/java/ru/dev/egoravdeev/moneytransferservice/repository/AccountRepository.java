@@ -1,5 +1,6 @@
 package ru.dev.egoravdeev.moneytransferservice.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.dev.egoravdeev.moneytransferservice.model.Account;
 
 import javax.swing.text.html.Option;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class AccountRepository {
 
     private List<Account> accounts;

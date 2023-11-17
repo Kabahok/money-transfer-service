@@ -11,8 +11,8 @@ import ru.dev.egoravdeev.moneytransferservice.model.DataOfTransfer;
 public class TransferController {
     private final TransferService transferService;
 
-    public TransferController() {
-        transferService = new TransferService();
+    public TransferController(TransferService transferService) {
+        this.transferService = transferService;
     }
 
 
