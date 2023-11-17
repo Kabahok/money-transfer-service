@@ -19,11 +19,17 @@ public class MoneyTransferRepositoryStubImpl implements MoneyTransferRepository 
 
     @Override
     public void addNewTransfer(Transfer transfer) {
-
+        transfers.add(transfer);
     }
 
     @Override
-    public Optional<Transfer> getTransfer() {
-        return null;
+    public Optional<Transfer> getTransfer(String operationId) {
+        for (Transfer transfer : transfers) {
+            if (transfer.getOperationId().equals(operationId)) {
+                return Optional.of(transfer);
+            }
+        }
+
+        return Optional.empty();
     }
 }

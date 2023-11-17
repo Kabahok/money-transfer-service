@@ -5,7 +5,7 @@ public class GenerateId {
 
     public GenerateId() {}
 
-    public int getId() {
-        return id++;
+    public String getId() {
+        return String.valueOf(id++);
     }
 }

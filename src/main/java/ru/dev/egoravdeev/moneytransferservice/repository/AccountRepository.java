@@ -15,6 +15,8 @@ public class AccountRepository {
 
     public AccountRepository () {
         accounts = new ArrayList<>();
+        accounts.add(new Account("9090909090909090", "3134", "132"));
+        accounts.add(new Account("234345345345", "24234", "24234"));
     }
 
     public Optional<Account> getAccountForNumber(String number) {

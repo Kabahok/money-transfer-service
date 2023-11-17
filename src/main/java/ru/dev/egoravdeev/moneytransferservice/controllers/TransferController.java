@@ -1,13 +1,12 @@
 package ru.dev.egoravdeev.moneytransferservice.controllers;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.dev.egoravdeev.moneytransferservice.model.Transfer;
 import ru.dev.egoravdeev.moneytransferservice.service.TransferService;
 import ru.dev.egoravdeev.moneytransferservice.model.DataOfTransfer;
 
 @RestController
+@RequestMapping("")
 public class TransferController {
     private final TransferService transferService;
 
@@ -15,13 +14,10 @@ public class TransferController {
         this.transferService = transferService;
     }
 
-
     @PostMapping("/transfer")
     public Transfer transfer(@RequestBody DataOfTransfer dataOfTransfer) {
 
-        transferService.createTransfer(dataOfTransfer);
-
-        return null;
+        return transferService.createTransfer(dataOfTransfer);
 
     }
 }

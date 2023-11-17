@@ -9,5 +9,5 @@ public class Account {
     private final String number;
     private final String validTiil;
     private final String cvv;
-    private BigDecimal balance;
+//    private BigDecimal balance;
 }

@@ -14,14 +14,14 @@ public class WebConfig {
         return new TransferBuilder();
     }
 
-    @Bean
-    public GenerateCode generateCode() {
-        return new GenerateCode();
-    }
 
     @Bean
     public GenerateId generateId() {
         return new GenerateId();
     }
 
+    @Bean
+    public GenerateCode generateCode() {
+        return new GenerateCode();
+    }
 }

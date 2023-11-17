@@ -7,5 +7,6 @@ import java.util.Optional;
 public interface MoneyTransferRepository {
     void addNewTransfer(Transfer transfer);
 
-    Optional<Transfer> getTransfer();
+    Optional<Transfer> getTransfer(String operationId);
+
 }
