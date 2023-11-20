@@ -2,6 +2,7 @@ package ru.dev.egoravdeev.moneytransferservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import ru.dev.egoravdeev.moneytransferservice.constants.StatusOfTransfer;
 
@@ -24,6 +25,7 @@ public class Transfer implements Serializable {
     @JsonIgnore
     private final String code;
 
+    @Setter
     @JsonIgnore
     private StatusOfTransfer status = StatusOfTransfer.NEW;
 
