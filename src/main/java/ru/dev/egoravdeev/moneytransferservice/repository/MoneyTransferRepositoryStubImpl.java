@@ -1,6 +1,8 @@
 package ru.dev.egoravdeev.moneytransferservice.repository;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.util.SerializationUtils;
+import ru.dev.egoravdeev.moneytransferservice.exception.ConfirmError;
 import ru.dev.egoravdeev.moneytransferservice.model.Transfer;
 
 import java.util.ArrayList;
@@ -20,6 +22,20 @@ public class MoneyTransferRepositoryStubImpl implements MoneyTransferRepository 
     @Override
     public void addNewTransfer(Transfer transfer) {
         transfers.add(transfer);
+    }
+
+    @Override
+    public Optional<Transfer> deleteTransfer(String operationId) throws ConfirmError {
+
+        for (Transfer transfer : transfers) {
+            if (transfer.getOperationId().equals(operationId)) {
+                Transfer item = SerializationUtils.clone(transfer);
+                transfers.remove(transfer);
+                return Optional.of(item);
+            }
+        }
+
+        throw new ConfirmError("Произошла ошибка при выполнении операции");
     }
 
     @Override

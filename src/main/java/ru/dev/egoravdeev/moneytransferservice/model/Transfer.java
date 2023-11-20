@@ -5,9 +5,11 @@ import lombok.Getter;
 import lombok.ToString;
 import ru.dev.egoravdeev.moneytransferservice.constants.StatusOfTransfer;
 
+import java.io.Serializable;
+
 @Getter
 @ToString
-public class Transfer {
+public class Transfer implements Serializable {
     private final String operationId;
 
     @JsonIgnore
